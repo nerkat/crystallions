@@ -712,7 +712,7 @@
 
                 <h3 class="h6">Send Us A Message</h3>
 
-                <form  onsubmit="sendMail()" name="contactForm" id="contactForm" method="post" action="" novalidate="novalidate">
+                <form onsubmit="sendMail()" name="contactForm" id="contactForm" method="post" action="" novalidate="novalidate">
                     <fieldset>
 
                         <div class="form-field">
@@ -729,6 +729,12 @@
                         <div class="form-field">
                             <textarea name="contactMessage" id="contactMessage" placeholder="Your Message" rows="10" cols="50" required="" aria-required="true"
                                 class="full-width"></textarea>
+                        </div>
+                        <div id="msgSent">
+                            Your message has been successfully sent. We will contact you very soon!
+                        </div>
+                        <div id="msgError">
+                            There was an error trying to send your message.
                         </div>
                         <div class="form-field">
                             <button class="full-width btn--primary">Submit</button>
@@ -848,7 +854,7 @@
 
             </div>
 
-            <div class="col-six tab-full right footer-subscribe">
+            <!-- <div class="col-six tab-full right footer-subscribe">
 
                 <h4>Get Notified</h4>
                 <p>Quia quo qui sed odit. Quaerat voluptas autem necessitatibus vitae aut non alias sed quia. Ut itaque enim
@@ -862,7 +868,7 @@
                     </form>
                 </div>
 
-            </div>
+            </div> -->
 
         </div>
         <!-- end footer-main -->
@@ -955,24 +961,32 @@
     <script src="js/jquery-3.2.1.min.js"></script>
     <script src="js/plugins.js"></script>
     <script src="js/main.js"></script>
-<script>
-function sendMail(){
+    <script>
+        function sendMail() {
 
-var name=document.getElementById('contactName').value;
-var email=document.getElementById('contactEmail').value;
-var subject=document.getElementById('contactSubject').value;
-var msg=document.getElementById('contactMessage').value;
+            document.getElementById('preloader').style.display = 'block';
+            document.getElementById('loader').style.display = 'block';
+            var name = document.getElementById('contactName').value;
+            var email = document.getElementById('contactEmail').value;
+            var subject = document.getElementById('contactSubject').value;
+            var msg = document.getElementById('contactMessage').value;
 
-    emailjs.send("default_service", "template_M08pHiMl", { name: name, email: email, subject: subject, msg: msg })
-            .then(function (response) {
-                console.log("SUCCESS. status=%d, text=%s", response.status, response.text);
-                document.getElementById("contactForm").reset();
-            }, function (err) {
-                console.log("FAILED. error=", err);
-            });
-}
+            emailjs.send("default_service", "template_M08pHiMl", { name: name, email: email, subject: subject, msg: msg })
+                .then(function (response) {
+                    console.log("SUCCESS. status=%d, text=%s", response.status, response.text);
+                    document.getElementById("contactForm").reset();
+                    document.getElementById('msgSent').style.display = 'block';
+                    document.getElementById('preloader').style.display = 'none';
+                    document.getElementById('loader').style.display = 'none';
+                }, function (err) {
+                    console.log("FAILED. error=", err);
+                    document.getElementById('msgError').style.display = 'block';
+                    document.getElementById('preloader').style.display = 'none';
+                    document.getElementById('loader').style.display = 'none';
+                });
+        }
 
-</script>
+    </script>
 </body>
 
 </html>
