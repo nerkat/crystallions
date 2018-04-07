@@ -33,6 +33,12 @@
     ================================================== -->
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function () {
+            emailjs.init("user_UsCjfBMpMsMvaMgPDL6Uw");
+        })();
+    </script>
 
 </head>
 
@@ -706,7 +712,7 @@
 
                 <h3 class="h6">Send Us A Message</h3>
 
-                <form name="contactForm" id="contactForm" method="post" action="" novalidate="novalidate">
+                <form  onsubmit="sendMail()" name="contactForm" id="contactForm" method="post" action="" novalidate="novalidate">
                     <fieldset>
 
                         <div class="form-field">
@@ -949,7 +955,24 @@
     <script src="js/jquery-3.2.1.min.js"></script>
     <script src="js/plugins.js"></script>
     <script src="js/main.js"></script>
+<script>
+function sendMail(){
 
+var name=document.getElementById('contactName').value;
+var email=document.getElementById('contactEmail').value;
+var subject=document.getElementById('contactSubject').value;
+var msg=document.getElementById('contactMessage').value;
+
+    emailjs.send("default_service", "template_M08pHiMl", { name: name, email: email, subject: subject, msg: msg })
+            .then(function (response) {
+                console.log("SUCCESS. status=%d, text=%s", response.status, response.text);
+                document.getElementById("contactForm").reset();
+            }, function (err) {
+                console.log("FAILED. error=", err);
+            });
+}
+
+</script>
 </body>
 
 </html>
