@@ -3708,6 +3708,10 @@ footer .row {
   align-items: center;
 }
 
+textarea {
+  resize: none;
+}
+
 /* custome add ons */
 
 /*# sourceMappingURL=main.css.map */
