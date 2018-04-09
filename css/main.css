@@ -3151,26 +3151,11 @@ html.no-csstransitions .home-content__main {
 }
 
 .contact-primary {
-  width: 65%;
+  width: 100%;
 }
 
 .contact-primary #contactForm {
   margin-top: -1.5rem;
-}
-
-.contact-secondary {
-  width: 35%;
-}
-
-.contact-secondary::before {
-  content: "";
-  display: block;
-  width: 35%;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  background-color: #121212;
 }
 
 .contact-secondary .contact-info {
@@ -3398,7 +3383,7 @@ html.no-csstransitions .home-content__main {
  *
  * ------------------------------------------------------------------- */
 footer {
-  padding: 9rem 0 6rem;
+  padding: 3rem 0 3rem;
   font-family: "montserrat-light", sans-serif;
   font-size: 15px;
   line-height: 2;
@@ -3533,7 +3518,7 @@ footer .row {
  * ## footer bottom
  * --------------------------------------------------------------- */
 .footer-bottom {
-  margin-top: 5.4rem;
+  margin-top: 0.4rem;
   text-align: center;
   font-size: 14px;
 }
@@ -3547,7 +3532,10 @@ footer .row {
 }
 
 .footer-bottom .logo {
-  width: 100px;
+  width: 180px;
+  height: auto;
+  max-height: 500px;
+  margin-top: 10px;
 }
 
 /* ------------------------------------------------------------------- 
@@ -3682,21 +3670,38 @@ footer .row {
 }
 
 @keyframes shake {
-    0% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1.1);
-    }
-    100% {
-        transform: scale(1);
-    }
-
+  0% {
+    transform: matrix(1, 0, 0, 1, 75, 0);
+  }
+  50% {
+    transform: matrix(1.05, 0, 0, 1.05, 0, -50);
+  }
+  100% {
+    transform: matrix(1, 0, 0, 1, 75, 0);
+  }
 }
 
 .parallax-slider {
-    animation-timing-function: ease-in;
-    animation: shake 10s infinite;
+  animation-timing-function: ease-in;
+  animation: shake 10s infinite;
+}
+
+.contact-info h5 {
+  color: #67b735;
+  font-size: 18px;
+}
+.contact-info p {
+  font-size: 18px;
+}
+
+.footer-nav__list {
+  list-style: none;
+  margin: 0;
+  font-size: 18px;
+}
+
+.white-text {
+  color: white;
 }
 
 /* custome add ons */
