@@ -3703,6 +3703,10 @@ footer .row {
 .white-text {
   color: white;
 }
+.slick-track{
+  display: flex;
+  align-items: center;
+}
 
 /* custome add ons */
 
