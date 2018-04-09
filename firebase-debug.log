@@ -1,0 +1,26 @@
+[debug] [2018-04-09T10:17:18.793Z] ----------------------------------------------------------------------
+[debug] [2018-04-09T10:17:18.796Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\nerka\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase deploy
+[debug] [2018-04-09T10:17:18.796Z] CLI Version:   3.17.7
+[debug] [2018-04-09T10:17:18.796Z] Platform:      win32
+[debug] [2018-04-09T10:17:18.796Z] Node Version:  v6.11.3
+[debug] [2018-04-09T10:17:18.796Z] Time:          Mon Apr 09 2018 17:17:18 GMT+0700 (SE Asia Standard Time)
+[debug] [2018-04-09T10:17:18.796Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-04-09T10:17:18.816Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-04-09T10:17:18.817Z] > authorizing via signed-in user
+[debug] [2018-04-09T10:17:18.824Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/crystal-lions  
+  
+ Mon Apr 09 2018 17:17:18 GMT+0700 (SE Asia Standard Time)
+[debug] [2018-04-09T10:17:20.253Z] <<< HTTP RESPONSE 200
+[debug] [2018-04-09T10:17:20.254Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/crystal-lions/tokens  
+  
+ Mon Apr 09 2018 17:17:20 GMT+0700 (SE Asia Standard Time)
+[debug] [2018-04-09T10:17:21.271Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Deploying to 'crystal-lions'...
+[info] 
+[info] i  deploying hosting
+[info] i  hosting: preparing . directory for upload...
+[debug] [2018-04-09T10:17:24.825Z] >>> HTTP REQUEST PUT https://deploy.firebase.com/v1/hosting/crystal-lions/uploads/-L9duErP-6BfA7DjhFzc?fileCount=324&message=  
+  
+ Mon Apr 09 2018 17:17:24 GMT+0700 (SE Asia Standard Time)
